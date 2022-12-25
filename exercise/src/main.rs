@@ -30,4 +30,12 @@ fn main() {
 
     let s: &[i32] = &a[2..4];
     println!("s: {s:?}");
+
+    let s1: &str = "World";
+    println!("s1: {s1:?}");
+
+    let mut s2: String = String::from("Hello ");
+    println!("s2: {s2:?}");
+    s2.push_str(s1);
+    println!("s2: {s2:?}");
 }
