@@ -38,4 +38,25 @@ fn main() {
     println!("s2: {s2:?}");
     s2.push_str(s1);
     println!("s2: {s2:?}");
+
+    fizzbuzz_to(20);
+}
+
+fn fizzbuzz_to(n: u32) {
+    for n in 1..=n {
+        fuzzbuzz(n)
+    }
+}
+
+fn fuzzbuzz(n: u32) {
+    match (is_divisible_by(n, 3), is_divisible_by(n, 5)) {
+        (true, true) => println!("fizzbuzz"),
+        (true, false) => println!("fizz"),
+        (false, true) => println!("buzz"),
+        (false, false) => println!("{n}"),
+    }
+}
+
+fn is_divisible_by(n: u32, div: u32) -> bool {
+    return n % div == 0;
 }
