@@ -40,6 +40,11 @@ fn main() {
     println!("s2: {s2:?}");
 
     fizzbuzz_to(20);
+
+    let mut rect = Rectangle { width: 10, height: 5 };
+    println!("old area: {}", rect.area());
+    rect.inc_width(5);
+    println!("old area: {}", rect.area());
 }
 
 fn fizzbuzz_to(n: u32) {
@@ -60,3 +65,19 @@ fn fuzzbuzz(n: u32) {
 fn is_divisible_by(n: u32, div: u32) -> bool {
     return n % div == 0;
 }
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn inc_width(&mut self, delta: u32) {
+        self.width += delta;
+    }
+}
+
