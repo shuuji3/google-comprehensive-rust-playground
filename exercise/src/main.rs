@@ -24,4 +24,10 @@ fn main() {
     let ref_x: &mut i32 = &mut x;
     *ref_x = 20;
     println!("x: {x}");
+
+    let a: [i32; 6] = [10, 20, 30, 40, 50, 60];
+    println!("a: {a:?}");
+
+    let s: &[i32] = &a[2..4];
+    println!("s: {s:?}");
 }
