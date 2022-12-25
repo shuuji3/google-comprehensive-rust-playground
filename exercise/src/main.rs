@@ -18,5 +18,10 @@ fn main() {
     println!("a: {:?}", a);
 
     let t: (i8, bool) = (7, true);
-    println!("t: '{:?}' and '{:?}'", t.0, t.1)
+    println!("t: '{:?}' and '{:?}'", t.0, t.1);
+
+    let mut x: i32 = 10;
+    let ref_x: &mut i32 = &mut x;
+    *ref_x = 20;
+    println!("x: {x}");
 }
