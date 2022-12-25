@@ -45,6 +45,16 @@ fn main() {
     println!("old area: {}", rect.area());
     rect.inc_width(5);
     println!("old area: {}", rect.area());
+
+    let id = std::process::id();
+    println!("id: {id}");
+
+    println!("coin toss: {}", pick_one("heads", "tails"));
+    println!("prize: {}", pick_one(500, 1000));
+}
+
+fn pick_one<T>(a: T, b: T) -> T {
+    if std::process::id() % 2 == 0 { a } else { b }
 }
 
 fn fizzbuzz_to(n: u32) {
